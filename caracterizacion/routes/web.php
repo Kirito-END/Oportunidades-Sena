@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('cliente.indext');
+    return view('cliente.index');
 });
 
 Route::get('/perfil', function () {
@@ -22,11 +22,7 @@ Route::get('/perfil', function () {
 Auth::routes();
 
 Route::get('/index', 'HomeController@index')->name('index');
-Route::get('/enti', 'EntidadController@index')->name('enti');
-Route::get('/entidadr', 'EntidadController@create')->name('registrarE');
-Route::post('/guardare', 'EntidadController@store')->name('post');
-Route::resource('/entidad','EntidadController');
 
-Route::get('/per', 'UserController@edit')->name('actu');
-Route::get('/user','UserController@index')->name('ver');
-Route::resource('/perfil','UserController');
+Route::resource('/oportunidades', 'OportunidadController')->middleware('auth');
+Route::get('/misOportunidades', 'OportunidadController@misOportunidades')->middleware('auth');
+Route::get('/oportunidadesAsignadas', 'OportunidadController@oportunidadesAsignadas')->middleware('auth');

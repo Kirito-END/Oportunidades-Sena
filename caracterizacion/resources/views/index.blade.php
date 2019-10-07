@@ -28,12 +28,6 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
 
-  <style media="screen">
-    .btns{
-      margin-left: -9%;
-    }
-  </style>
-
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -68,7 +62,7 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="{{route('actu')}}" class="btn btn-default btn-flat">Perfil</a>
+                    <a href="{{url('/perfil')}}" class="btn btn-default btn-flat">Perfil</a>
                   </div>
                   <div class="pull-right">
                     <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
@@ -104,9 +98,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-              <li><a href="#"><i class="fa fa-circle-o"></i>Oportunidades</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i>Registrar oportunidad</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i>Mis oportunidades</a></li>
+              <li><a href="{{url('/oportunidades')}}"><i class="fa fa-circle-o"></i>Oportunidades</a></li>
+              <li><a href="{{url('/oportunidades/create')}}"><i class="fa fa-circle-o"></i>Registrar oportunidad</a></li>
+              <li><a href="{{url('/misOportunidades')}}"><i class="fa fa-circle-o"></i>Mis oportunidades</a></li>
+              <li><a href="{{url('/oportunidadesAsignadas')}}"><i class="fa fa-circle-o"></i>Oportunidades asignadas</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -119,7 +114,7 @@
           <ul class="treeview-menu">
               <li><a href="#"><i class="fa fa-circle-o"></i>Seguimientos</a></li>
           </ul>
-        </li>
+        </li> 
         <li class="treeview">
             <a href="#">
               <i class="fa fa-building"></i>
@@ -129,8 +124,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{route('enti')}}"><i class="fa fa-circle-o"></i>Entidades</a></li>
-              <li><a href="{{route('registrarE')}}"><i class="fa fa-circle-o"></i>Registrar entidad</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Entidades</a></li>
+              <li><a href="#"><i class="fa fa-circle-o"></i>Registrar entidad</a></li>
             </ul>
         </li>
         @if(Auth::User()->perfil->perfil == 'Administrador')
@@ -142,7 +137,7 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{route('ver')}}"><i class="fa fa-circle-o"></i>Lista de usuarios</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Lista de usuarios</a></li>
               </ul>
           </li>
           @endif
@@ -150,7 +145,7 @@
             <a href="{{url('/')}}">
               <i class="fa fa-home"></i><span>Pagina Principal</span>
             </a>
-        </li>
+        </li>       
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -160,7 +155,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-
+      
     </section>
 
     <!-- Main content -->
@@ -197,11 +192,5 @@
 <script src="{{ asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dist/js/demo.js')}}"></script>
-<script type="text/javascript">
-  function cifrar(){
-    var password = document.getElementById("password");
-    password.value=sh1(password.value);
-  }
-</script>
 </body>
 </html>

@@ -3,12 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Municipio;
+use App\Oportunidad;
 
 class Entidad extends Model
 {
-    public function municipio()
+    public function oportunidad()
     {
-      return $this->belongsTo(Municipio::class);
+        return $this->hasMany(Oportunidad::class);
     }
 }

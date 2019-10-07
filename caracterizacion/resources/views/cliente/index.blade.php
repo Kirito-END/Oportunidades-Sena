@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Rapid Bootstrap Template</title>
+  <title>Oportunidades Sena</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -28,16 +28,7 @@
   <link href="css/style.css" rel="stylesheet">
 
   <style media="screen">
-  #titulo {
-    margin-left: 110%;
-    margin-top: 5%;
-}
-#a{
-width: 15%;
-height: 10%;
-margin-top: -2%;
-}
-.btn-circle {
+  .btn-circle {
 width: 30px;
 height: 30px;
 padding: 6px 0px;
@@ -45,6 +36,15 @@ border-radius: 15px;
 text-align: center;
 font-size: 12px;
 line-height: 1.42857;
+}
+#a{
+width: 15%;
+height: 10%;
+margin-top: -2%;
+}
+#img{
+  margin-bottom: -27%;
+  margin-left: 25%;
 }
 </style>
 
@@ -61,18 +61,6 @@ line-height: 1.42857;
   Header
   ============================-->
   <header id="header">
-
-    <div id="topbar">
-      <div class="container">
-        <div class="social-links">
-          <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-          <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-          <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-          <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-
     <div class="container">
 
       <nav class="main-nav d-lg-block">
@@ -92,7 +80,7 @@ line-height: 1.42857;
                   @csrf
                   <div class="form-group col-md-12">
                     <input type="search" aria-label="Search" name="razon_social" value=""
-                    placeholder="Buscar Oportunidad" class="form-control mr-sm-2">
+                    placeholder="Buscar Oportunidad" class="form-control mr-sm-2 p-2">
                     <button type="submit" name="button" class="btn btn-info my-2 my-sm-0 btn-circle">
                       <img src="img/open-iconic-master/png/magnifying-glass-2x.png" alt="">
                     </button>
@@ -105,28 +93,9 @@ line-height: 1.42857;
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                 </li>
-                @if (Route::has('register'))
-                    <li class="nav-item">
-                        <!--<a class="nav-link" href="{{ route('register') }}">{{ __('Registrate') }}</a>-->
-                    </li>
-                @endif
             @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                            {{ __('Salir') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('index') }}">{{ __('Panel de control') }}</a>
                 </li>
             @endguest
         </ul>
@@ -140,15 +109,147 @@ line-height: 1.42857;
   ============================-->
   <section id="intro" class="clearfix">
     <div class="container d-flex h-100">
-      <div class="row justify-content-center align-center">
-        <div class="col-md-12 intro-info order-md-first order-last" id="titulo">
-          <h2>Oportunidades <span>Sena</span></h2>
+      <div class="row justify-content-center align-self-center">
+        <div class="col-md-6 intro-info order-md-first order-last">
+          <h2>Bienvenido a<br>Oportunidades <span>Sena</span></h2>
+          <div>
+            {{--<a href="{{route('ver')}}" class="btn-get-started scrollto">Consulta Aqui</a>--}}
+          </div>
+        </div>
+
+        <div class="col-md-6 intro-img order-md-last order-first">
+          <img src="img/Imagen1.png" alt="" class="img-fluid" id="img">
         </div>
       </div>
 
-
     </div>
   </section><!-- #intro -->
+
+  <main id="main">
+
+    <!--==========================
+      Que es el Sena
+    ============================-->
+    <section id="about">
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-5 col-md-6">
+            <div class="about-img">
+              <img src="img/sena.jpg" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-7 col-md-6">
+            <div class="about-content">
+              <h2>Que es el Sena?</h2>
+              <h3>Cultura de calidad para la sociedad.</h3>
+              <p>El Sena (Servicio nacional de Aprendizaje) es un establecimiento publico de orden nacional, con personeria Judirica, patrimnio propio e independiente, y con autonomia administrativa.
+</p>
+              <p>El sena ofrece formacion gratuita a millonesde colombianos que se benefician con programas tecnicos, tecnologos y complementarios enfocados al desarrollo economico, tecnologico y social del pais.
+              <a href="http://www.sena.edu.co/es-co/Paginas/default.aspx">Pagina principal</a></p>
+              <ul>
+                <li><i class="ion-android-checkmark-circle"></i> Has tus pasantias en el sena.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- #about -->
+
+
+    <!--==========================
+      Servicios y Oportunidades
+    ============================-->
+    <section id="services" class="section-bg">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Servicios y Oportunidades</h3>
+          <p>Estos son los Servicios y Oportunidades que da el Sena a las empresas</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon" style="background: #fceef3;"><i class="ion-ios-book-outline" style="color: #ff689b;"></i></div>
+              <h4 class="title"><a href="">Formacion para el Trabajo</a></h4>
+              <p class="description">Inicia una formacion en el sena para prepararte para el mundo laboral.
+              <a href="http://www.sena.edu.co/es-co/Paginas/default.aspx" align="center">Mas Informacion</a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline" style="color: #e98e06;"></i></div>
+              <h4 class="title"><a href="">Cursos Cortos Gratuitos</a></h4>
+              <p class="description">Has complementarios o tecnicos en el Sena para reforzar o iniciar en un ambiente laboral</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon" style="background: #e6fdfc;"><i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i></div>
+              <h4 class="title"><a href="">Contratos de Aprendizaje</a></h4>
+              <p class="description">Tienes la oportunidad de hacer tu etapa practica en una empresa como si ubieras comenzado a trabajar con la empresa.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #services -->
+
+    <!--==========================
+      Que son las Oportunidades Sena
+    ============================-->
+    <section id="why-us" class="wow fadeIn">
+      <div class="container-fluid">
+
+        <header class="section-header">
+          <h3>Que son las Oportunidades Sena</h3>
+          <p>Las oportunidades Sena son convenios del sena con empresas externas.</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="why-us-img">
+              <img src="img/sena-1.jpg" alt="" class="img-fluid">
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="why-us-content">
+              <p>Las oportunidades Sena son propuestas, estimulos, orientaciones, etc que propone una empresa al Sena para
+              que sus trabajadores se capaciten, y vallan aprendiendo mas cosas sobres sus trabajos. Tambien es un medio por donde se pueden hacer contratos con el sena y asi conseguir trabajadores eficientes
+              para la empresa.{{--<a href="{{route('oportu')}}">Consulta Aqui</a>--}}</p>
+
+              <div class="features wow bounceInUp clearfix">
+                <i class="ion-ios-paper-outline" style="color: #f058dc;"></i>
+                <h4>Comó proponer un a oportunidad?</h4>
+                <p>Tu o tu empresa puede proponer una oportunidad de aprendizaje o de empleo al sena...</p>
+              </div>
+
+              <div class="features wow bounceInUp clearfix">
+                <i class="ion-ios-bookmarks-outline" style="color: #ffb774;"></i>
+                <h4>Mira tu oportunidad</h4>
+                <p>Tu puedes ver como va y quien esta haciendo el proceso de la oportunidad que solicitaste ante el sena {{--<a href="{{route('oportu')}}">Consulta Aqui</a>--}}</p>
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+  </main>
 
   <!--==========================
     Footer
@@ -166,13 +267,20 @@ line-height: 1.42857;
                 <div class="col-sm-6">
 
                   <div class="footer-links">
-                    <h4>Contact Us</h4>
+                    <h4>Contactos</h4>
                     <p>
-                      A108 Adam Street <br>
-                      New York, NY 535022<br>
-                      United States <br>
-                      <strong>Phone:</strong> +1 5589 55488 55<br>
-                      <strong>Email:</strong> info@example.com<br>
+                      Popayán <br>
+                      Cauca, NY 535022<br>
+                      Colombia <br>
+                      <strong>Celular:</strong> +57 3058172745<br>
+                      <strong>Correo:</strong> daalean4@misena.edu.co<br>
+                    </p>
+                    <p>
+                      Popayán <br>
+                      Cauca, NY 535022<br>
+                      Colombia <br>
+                      <strong>Celular:</strong> +57 3199393754<br>
+                      <strong>Correo:</strong> jmmariaca@misena.edu.co<br>
                     </p>
                   </div>
 
@@ -194,7 +302,7 @@ line-height: 1.42857;
             <div class="form">
 
               <h4>Danos tus opiniones</h4>
-              <p>Eos ipsa est voluptates. Nostrum nam libero ipsa vero. Debitis quasi sit eaque numquam similique commodi harum aut temporibus.</p>
+              <p>Tu opinion es muy importante para nosotros si tienes alguna peticion, queja o reclamo comunicate con nosotros.</p>
               <form action="" method="post" role="form" class="contactForm">
                 @csrf
                 <div class="form-group">
@@ -230,15 +338,7 @@ line-height: 1.42857;
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>Rapid</strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Rapid
-        -->
+        &copy; Copyright <strong>Sena</strong>. Todos los derechos reservados
       </div>
     </div>
   </footer><!-- #footer -->
