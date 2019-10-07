@@ -11,4 +11,9 @@ class Entidad extends Model
     {
         return $this->hasMany(Oportunidad::class);
     }
+
+    public function municipio()
+    {
+      return $this->belongsTo(Municipio::class);
+    }
 }
